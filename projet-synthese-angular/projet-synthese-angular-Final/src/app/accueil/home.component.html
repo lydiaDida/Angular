@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Hebergement</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a routerLink="propos" class="nav-link active" href="#">A propos
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+ <li class="nav-item">
+          <a class="nav-link"  routerLink="">Nos hebergements</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="connexion" class="nav-link" >Admin</a>
+        </li>
+       
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Connexion</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" routerLink="connexion">Vous etes locataire?</a>
+            <a class="dropdown-item" routerLink ="/connexionProp">Vous etes proprietaire?</a>
+
+          </div>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-sm-2" type="text" placeholder="Rechercher">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Rechercher</button>
+      </form>
+    </div>
+  </div>
+ 
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let b of hebergements">
+            <div class="card-body">
+              <div class="row">
+                <h5 class="card-title">
+                  <img width="300px" height="300px" alt="My image name" src={{b.repertoireDePhoto}}>
+               
+                </h5>
+                </div>
+               <!-- <p class="card-text">{{b.desciption | slice:0:20}} ...</p>-->
+              <h3 class="card-text"><span class="text-muted font-weight-bold">{{b.prix | number:'0.00'}} $</span></h3>
+              <button type="button" class="btn btn-primary"><a routerLink="/Reserver">Réserver!</a></button>
+              <h5 class="card-title">{{b.adresse.numeroDeRue}}</h5>
+              <h5 class="card-title">{{b.adresse.rue}}</h5>
+
+              <h5 class="card-title"></h5>
+             
+            </div>
+    </div>
+</div>
+
+
+    
+    
